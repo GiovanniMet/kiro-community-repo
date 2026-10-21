@@ -29,7 +29,7 @@ echo "Generating metadata for ${PACKAGE_NAME} ${PACKAGE_VERSION} ${PACKAGE_ARCH}
 mkdir -p "$PACKAGES_DIR" "$POOL_DIR"
 cp "$DEB_FILE" "${POOL_DIR}/${FILENAME}"
 
-dpkg-scanpackages --arch amd64 pool /dev/null > "${PACKAGES_DIR}/Packages"
+dpkg-scanpackages pool /dev/null > "${PACKAGES_DIR}/Packages"
 gzip -n -9 -c "${PACKAGES_DIR}/Packages" > "${PACKAGES_DIR}/Packages.gz"
 
 # The binary is used only to derive trusted package metadata. It is never published.
