@@ -2,11 +2,12 @@
 set -euo pipefail
 
 rm -rf site
-mkdir -p site
+mkdir -p site/state
 cp -a dists site/
 cp -a public site/
 cp KEYS site/KEYS
 cp index.html site/index.html
+cp state/latest.json site/state/latest.json
 : > site/.nojekyll
 
 # Intentionally do not copy pool/: GitHub Pages serves metadata only.
