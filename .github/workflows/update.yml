@@ -38,14 +38,14 @@ jobs:
       - name: Import repository signing key
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-          DEBUG : ${{ vars.DEBUG  }}
+          DEBUG: ${{ vars.DEBUG  }}
           GPG_KEY_ID: ${{ vars.GPG_KEY_ID }}
         run: |
           set -euo pipefail
         
           printf '%s' "$GPG_PRIVATE_KEY" | gpg --batch --import
         
-          if [ "${DEBUG :-false}" = "true" ]; then
+          if [ "${DEBUG:-false}" = "true" ]; then
         
             echo "========================================="
             echo "PUBLIC KEYS"
@@ -117,13 +117,13 @@ jobs:
         
           gpg --verify dists/stable/InRelease
         
-          if [ "${DEBUG :-false}" = "true" ]; then
+          if [ "${DEBUG:-false}" = "true" ]; then
             echo "OK InRelease"
           fi
         
           gpg --verify dists/stable/Release.gpg dists/stable/Release
         
-          if [ "${DEBUG :-false}" = "true" ]; then
+          if [ "${DEBUG:-false}" = "true" ]; then
             echo "OK Release.gpg"
         
             echo
@@ -133,13 +133,13 @@ jobs:
         
           test -s dists/stable/main/binary-amd64/Packages
         
-          if [ "${DEBUG :-false}" = "true" ]; then
+          if [ "${DEBUG:-false}" = "true" ]; then
             echo "OK Packages"
           fi
         
           test -s dists/stable/main/binary-amd64/Packages.gz
         
-          if [ "${DEBUG :-false}" = "true" ]; then
+          if [ "${DEBUG:-false}" = "true" ]; then
             echo "OK Packages.gz"
         
             echo
@@ -152,7 +152,7 @@ jobs:
             exit 1
           fi
         
-          if [ "${DEBUG :-false}" = "true" ]; then
+          if [ "${DEBUG:-false}" = "true" ]; then
             echo "ALL CHECKS PASSED"
           fi
 
