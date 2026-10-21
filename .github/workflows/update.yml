@@ -40,7 +40,12 @@ jobs:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
         run: |
           printf '%s' "$GPG_PRIVATE_KEY" | gpg --batch --import
-          gpg --batch --list-secret-keys --keyid-format LONG
+        
+          echo "PUBLIC KEYS"
+          gpg --list-keys --keyid-format LONG
+        
+          echo "SECRET KEYS"
+          gpg --list-secret-keys --keyid-format LONG
 
       - name: Fetch latest official Kiro package
         run: python3 scripts/fetch_kiro.py
