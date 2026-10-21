@@ -1,0 +1,8 @@
+build/
+site/
+pool/
+*.deb
+private.asc
+*.gpg~
+__pycache__/
+*.pyc

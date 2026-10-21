@@ -1,0 +1,109 @@
+name: Update and publish repository
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"
+
+concurrency:
+  group: kiro-repository-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  update-and-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install APT repository tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes apt-utils dpkg-dev
+
+      - name: Import repository signing key
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+        run: |
+          printf '%s' "$GPG_PRIVATE_KEY" | gpg --batch --import
+          gpg --batch --list-secret-keys --keyid-format LONG
+
+      - name: Fetch latest official Kiro package
+        run: python3 scripts/fetch_kiro.py
+
+      - name: Generate APT metadata
+        run: bash scripts/generate_repo.sh
+
+      - name: Sign Release metadata
+        env:
+          GPG_KEY_ID: ${{ vars.GPG_KEY_ID }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: |
+          gpg --batch --yes --pinentry-mode loopback \
+            --passphrase "$GPG_PASSPHRASE" \
+            --local-user "$GPG_KEY_ID" \
+            --digest-algo SHA256 \
+            --clearsign \
+            --output dists/stable/InRelease \
+            dists/stable/Release
+
+          gpg --batch --yes --pinentry-mode loopback \
+            --passphrase "$GPG_PASSPHRASE" \
+            --local-user "$GPG_KEY_ID" \
+            --digest-algo SHA256 \
+            --armor --detach-sign \
+            --output dists/stable/Release.gpg \
+            dists/stable/Release
+
+      - name: Verify signatures and repository safety
+        run: |
+          gpg --verify dists/stable/InRelease
+          gpg --verify dists/stable/Release.gpg dists/stable/Release
+          test -s dists/stable/main/binary-amd64/Packages
+          test -s dists/stable/main/binary-amd64/Packages.gz
+          if git ls-files '*.deb' | grep -q .; then
+            echo 'ERROR: a .deb file is tracked by Git' >&2
+            exit 1
+          fi
+
+      - name: Commit generated metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dists state/latest.json
+          if git diff --cached --quiet; then
+            echo 'Repository metadata already current.'
+          else
+            VERSION="$(python3 -c 'import json; print(json.load(open("state/latest.json"))["version"])')"
+            git commit -m "Update Kiro repository to ${VERSION}"
+            git push
+          fi
+
+      - name: Build GitHub Pages site
+        run: bash scripts/build_pages.sh
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
