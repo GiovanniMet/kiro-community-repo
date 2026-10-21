@@ -38,14 +38,49 @@ jobs:
       - name: Import repository signing key
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          DEBUG_GPG: ${{ vars.DEBUG_GPG }}
+          GPG_KEY_ID: ${{ vars.GPG_KEY_ID }}
         run: |
+          set -euo pipefail
+        
           printf '%s' "$GPG_PRIVATE_KEY" | gpg --batch --import
         
-          echo "PUBLIC KEYS"
-          gpg --list-keys --keyid-format LONG
+          if [ "${DEBUG_GPG:-false}" = "true" ]; then
         
-          echo "SECRET KEYS"
-          gpg --list-secret-keys --keyid-format LONG
+            echo "========================================="
+            echo "PUBLIC KEYS"
+            echo "========================================="
+            gpg --list-keys --keyid-format LONG
+        
+            echo
+            echo "========================================="
+            echo "SECRET KEYS"
+            echo "========================================="
+            gpg --list-secret-keys --keyid-format LONG
+        
+            echo
+            echo "========================================="
+            echo "SECRET KEYS WITH FINGERPRINT"
+            echo "========================================="
+            gpg --fingerprint --fingerprint
+        
+            echo
+            echo "========================================="
+            echo "SECRET KEYS WITH KEYGRIP"
+            echo "========================================="
+            gpg --with-keygrip --list-secret-keys
+        
+          fi
+        
+          if ! gpg --list-secret-keys --keyid-format LONG | grep -q "$GPG_KEY_ID"; then
+            echo
+            echo "ERROR: Expected secret key not found"
+            echo "Expected: $GPG_KEY_ID"
+            echo
+            echo "Imported secret keys:"
+            gpg --list-secret-keys --keyid-format LONG
+            exit 1
+          fi
 
       - name: Fetch latest official Kiro package
         run: python3 scripts/fetch_kiro.py
