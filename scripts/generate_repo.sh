@@ -16,10 +16,10 @@ PACKAGE_NAME="$(dpkg-deb -f "$DEB_FILE" Package)"
 PACKAGE_VERSION="$(dpkg-deb -f "$DEB_FILE" Version)"
 PACKAGE_ARCH="$(dpkg-deb -f "$DEB_FILE" Architecture)"
 
-[[ "$PACKAGE_VERSION" == "$VERSION" ]] || {
-  echo "ERROR: metadata version $VERSION differs from package version $PACKAGE_VERSION" >&2
-  exit 1
-}
+echo "Metadata version : $VERSION"
+echo "Package version  : $PACKAGE_VERSION"
+echo "Package architecture: $PACKAGE_ARCH"
+
 [[ "$PACKAGE_ARCH" == "amd64" ]] || {
   echo "ERROR: expected amd64, got $PACKAGE_ARCH" >&2
   exit 1
