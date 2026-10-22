@@ -4,40 +4,40 @@ Hash: SHA256
 Architectures: amd64
 Codename: stable
 Components: main
-Date: Wed, 21 Oct 2026 11:04:15 +0000
+Date: Thu, 22 Oct 2026 11:05:10 +0000
 Description: Community-maintained package repository for Kiro IDE on Linux
 Label: Kiro Community Repository
 Origin: Kiro Community Repository
 Suite: stable
 MD5Sum:
- e9fc94bbcc6ada8b19f83ecc7ddb5c42              249 Release
+ d0f3c07906037ca745eeccd19182835c              249 Release
  32100964ea4d3601ce5e252db5030efb             1632 main/binary-amd64/Packages
  55821325415cb776eac1303aadae125c              857 main/binary-amd64/Packages.gz
 SHA1:
- 257ff61ed8ba35182291e9316ea07936ccb68195              249 Release
+ 3a4fd131b10acadb149b6e39171319b918b89689              249 Release
  49fc38290ab588625a33565c04728abd09bddceb             1632 main/binary-amd64/Packages
  e8f5f028847100f1b1e5c7de2764c43b72d97554              857 main/binary-amd64/Packages.gz
 SHA256:
- 7b802d14046ad5e8bed591a22942a9f5f6005c2d7d4d0baedb9a20b483a5d8a6              249 Release
+ cfc60db163b66d19653749309a6a8a4ec69dc216c23ac2b681c9ba70c3f5b46c              249 Release
  dc194bc67e1490ed5a20be78cfe34d3b19c69147d022460591e0a393d93d3c62             1632 main/binary-amd64/Packages
  2d4e1896595d56378655c5c01b6b8d2b281b680fcda59d94c14a8a10cbd6ab51              857 main/binary-amd64/Packages.gz
 SHA512:
- aede5cdc7f96864f92f77b1a5a54f7ffeccbbef658e43bf737afef7d6c1be9dde7997d0b026a5fc9d2434949541b652f7ce39ad740c9290127f0dd972b47cc6b              249 Release
+ 0fbc551d7fb9bbdaad1139de7443eb1703e3628fa705959111f07a035df25be7ebded6c222269a67d49dd2c9fc3b58ad57a63d37ca9c8a32e1901ecd2c5603bc              249 Release
  2721a15b5d6765dab2f52f6b893e9662e94a7decf351ad650940fe046e7325d3c7ebde3f77ddfb58b417fee3b6e90e3e5817125b282ce866d3d1646068c45a56             1632 main/binary-amd64/Packages
  819162c054a4c99bd1369f1a4e92d6d85ad23ddfe0c79357d4c2e506f4db04f90b2b3b27acb569f481dbce597ba77d8bf3a298737f3d34b456ba0e8f191ef060              857 main/binary-amd64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE1yyoCF6vozHr4O2Ek3N6/4iuSs4FAmrYnC8ACgkQk3N6/4iu
-Ss54TBAAyv9KhIAFpdQVMuKFZWWuQvwM7ToDxg71KLsNzWZl3LGlnUhiHxrUUjWt
-nBAZvkLy2XjqycKOh03LyO+af4l1t+4Aj5aTSUDVcLTa2yCSq4iBvuXgoEIVeEN+
-K7gjr/PRcqnblmHoNVKJTooyu8au1JeefAiJwkmENZqOyl+y/XFZ0O8cgo1uewug
-a4tCM4TXjHyYNmiz8qQ9uZb9XFXmspsSFgnJNlh7feFIj1Si0vfmuuOBnRfVs+F6
-ng1Eb/pnncORXu3IK8IMmNMFWwpZHSrr+u9uAMW2oMZpyW4DgjFx/n0SW1Ia2LNn
-wlm04YHRvoCRQajzqPmUBrMyWxHYAzKhjr3jLHdXMYOl4VmYc48Wo69R7ABm2l9p
-BlTwfS5kpc87u2KOPFoVSAg5bTsGrrBg/CB+YjoDi4IgBF8c7co2BRix6Un1RMXt
-pUHFoo60uw7A6u73wIdiikHu1YMe7ed/VXZu0ZquLvmHgPy9P5fH88XZHimscx/R
-zfOX0uzhUEBebu7sGI1DfI1ylu1EIZuKyMOThHzUO/L49o/EMiKzYCIw4ehr1bWL
-jXxCnX0GTG7G2OJzlGJOb3BLp51yHYtPaTsbYoukXgUdsXrkCn9njtAmb0ouDKhF
-HpTdPpNa0Ec9lLPswDn/2Xbts0k3DGpBpttQnVXa3c55IIfUQQY=
-=cZG9
+iQIzBAEBCAAdFiEE1yyoCF6vozHr4O2Ek3N6/4iuSs4FAmrZ7eYACgkQk3N6/4iu
+Ss4+Nw/9HXEqGFaeoVn9Mvy8vZScD9z4EjJ95gOUsq66Tk+Uhwrou59c03VtZlZI
+4FURTllIURVfSiFSVH4dXIC6l6Fip1hF0VMkyXfVIuUJbzL9HYHZrzia7JROb5zm
+pVMdmHuFILFJQrrds4P4Nnz6XoiwpBhIj1chDpfkJhqiMToo2CHfZaPq6dLYPzBW
+v8WdXH5O3APefRd0KN8D8oQurM1tk+wqvFbUlu/t4VIwrE4xp/Nyi5Ya6SlPErfB
+gb7nYOdJLCAXdkyeDE2AqHHL9kRZERCu0X7kqVufTj6FUqhuShY+p2mVIf9/Zkcv
+vcrQPwp9TOZ68IKbaLJ3VViaUADZ+YPno/BfBy+YFRSRekVduMOpyTRptOVWIL23
+caIGaqsF6fN2SBH203EWmT9Ctt+1dI+rmG3O1U+0KbAeYTvjKwAc4TwzueUSh0SM
+Tcd9UNpsGtVuhCMnH4XsO/CT3+8059vmfyOJPh/G2tF394kCEqpW6kPkXdU25OoK
+3suF3647elRLHTfcpokDqxbN47Q/7j5u8w3K67OjnDH60Baff4++U9d/ggbIG/xq
+jZL7hp/wjQY7M/4p/rRJoMu3WOwiKvtUz0tv+CdEIizm/rNh1P3Nq7WQX7auWFF/
+yaIzWrTqc/rEElsx/8cFWXxH7nZTA2oKTfc7H7rISZXSZ9RsJgw=
+=d+VJ
 -----END PGP SIGNATURE-----
