@@ -1,24 +1,24 @@
 Architectures: amd64
 Codename: stable
 Components: main
-Date: Fri, 23 Oct 2026 10:57:06 +0000
+Date: Sat, 24 Oct 2026 10:12:50 +0000
 Description: Community-maintained package repository for Kiro IDE on Linux
 Label: Kiro Community Repository
 Origin: Kiro Community Repository
 Suite: stable
 MD5Sum:
- 9b7839354ca7712e2134dd69f54b2b2d              249 Release
+ 33e4a042edb47c90b0a9fe0e13c17780              249 Release
  939250eaba3c4fb9514c49c0372a6835             1632 main/binary-amd64/Packages
  53922011743673b73448d3680d1ec7f1              860 main/binary-amd64/Packages.gz
 SHA1:
- 3b9a4de92b7271d66b7a55d99e080dc6bb328e58              249 Release
+ 5f6546b64729f0e0b479d897a8c749a8bbfa0172              249 Release
  ac38876bcf24f44d326cb2f1a9ccabeb8d8475cd             1632 main/binary-amd64/Packages
  a4245d7b70c26d58873e20155347f7d0723c2cdf              860 main/binary-amd64/Packages.gz
 SHA256:
- 39da61e7aa31e9831f43b8dcd806ec99bc73dfc4091b2d7c798914a6604f678d              249 Release
+ 854b0d579c43efbec1b49bef9fd7df6dc7f8db785668f6e3f5d6c8fb61b04870              249 Release
  b20fb6c602f7cb151f54151df599d86d3fa758ca9e1b9c4b41000bf2f125f43e             1632 main/binary-amd64/Packages
  6ee8bcc3316b46e186aa0d0a4f1a5869ac8f3c587fc4314794657c2ef73eac6c              860 main/binary-amd64/Packages.gz
 SHA512:
- 668213f5886928a2e8b150d442c14ac75eb4d290d22150503046aea8df252450cad3918f3d43e72aa1c910e6591f95836f445c5a83a9a5ecdd71d0a148c1704f              249 Release
+ 32725996673fa0bcaad526674fa7c86c9908844f1210c1ce7577758bab008fe1b96671430729db9b8b86719a070efce32d2df2f5ac943a1e9ffc0c2ed526a6d4              249 Release
  d56cc02bc55c2ce852393ce4a6e00b04b8e58e428f3302abe2e1aafe0e456ec2a3db7df544727b90ec17cb2f45e49efb2f5e2c16cfdcdfb37771efebbdfcec74             1632 main/binary-amd64/Packages
  4b6f2272a4999b588a1c9ce3531dba467e7b210e2da5db525b130e963e52c50a695a6a5002c67898cb74894e0f6c2482582e446ab88f2527275a3ab8298e4fb3              860 main/binary-amd64/Packages.gz
