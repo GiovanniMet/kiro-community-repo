@@ -3,20 +3,43 @@ name: Update and publish repository
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 8 * * *"
-      timezone: "Europe/Rome"
+    - cron: "0 */6 * * *"
 
 concurrency:
   group: kiro-repository-pages
   cancel-in-progress: false
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 
 jobs:
+  check-release:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    outputs:
+      update-required: ${{ steps.check.outputs.update-required }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check for a new Kiro release
+        id: check
+        run: python3 scripts/check_release.py
+
   update-and-publish:
+    needs: check-release
+    if: needs.check-release.outputs.update-required == 'true'
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     environment:
       name: github-pages

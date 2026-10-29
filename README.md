@@ -207,7 +207,9 @@ The Debian package itself is treated as the authoritative source for the package
 
 ## Automated updates
 
-A scheduled GitHub Actions workflow checks the official Kiro release metadata every day.
+A scheduled GitHub Actions workflow checks the official Kiro release metadata every 6 hours.
+If the latest version matches `state/latest.json`, the workflow skips the package
+download, repository build, and deployment.
 
 When a release is detected, the workflow:
 
