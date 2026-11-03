@@ -6,8 +6,11 @@ This project provides signed APT repository metadata while package binaries are 
 > ⚠️ Unofficial project
 >
 > [!IMPORTANT]
+> 
 > This is an unofficial community project. It is not affiliated with, endorsed by, or supported by Amazon Web Services or the Kiro team.
 > Project status: Experimental
+>
+> I built this to solve a problem I had. If it solves a problem for you too, please ⭐ the repo. It helps me understand if it's useful to others!
 
 ## Why this repository exists
 
