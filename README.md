@@ -4,8 +4,6 @@ Community-maintained package repository for Kiro IDE on Linux.
 This project provides signed APT repository metadata while package binaries are downloaded directly from the official Kiro distribution servers.
 
 > ⚠️ Unofficial project
->
-> [!IMPORTANT]
 > 
 > This is an unofficial community project. It is not affiliated with, endorsed by, or supported by Amazon Web Services or the Kiro team.
 > Project status: Experimental
