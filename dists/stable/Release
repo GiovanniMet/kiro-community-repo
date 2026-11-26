@@ -1,24 +1,24 @@
 Architectures: amd64
 Codename: stable
 Components: main
-Date: Wed, 25 Nov 2026 01:43:50 +0000
+Date: Thu, 26 Nov 2026 01:17:53 +0000
 Description: Community-maintained package repository for Kiro IDE on Linux
 Label: Kiro Community Repository
 Origin: Kiro Community Repository
 Suite: stable
 MD5Sum:
- 8543b01e98049832e32a0a02f41fd139              249 Release
- 04228626c82d7babde5ce9244e4e8294             1650 main/binary-amd64/Packages
- e0bf548ce0ec4a3fdd20ffc8b77602b7              861 main/binary-amd64/Packages.gz
+ a8fa775731e3ec18e167d67d8d05ed68              249 Release
+ 58a58107ee0df97c4f776f582c50a14c             1650 main/binary-amd64/Packages
+ bc5d2fedc856b5c82d37e80139e6a1f0              863 main/binary-amd64/Packages.gz
 SHA1:
- 91bb2be77d646be295c6f6aac08cf2feed9e2055              249 Release
- 9a9cf679fec1030498123d5bb887edee62b9af61             1650 main/binary-amd64/Packages
- 591adbb904dc92194f3feff72eb5be349bd28d6a              861 main/binary-amd64/Packages.gz
+ 0febc4033c056c9b3ae10e24c5ef7dda50445360              249 Release
+ 80176b9cd70e4c871b80f7fcb7842e09f2cb7a52             1650 main/binary-amd64/Packages
+ 9a02ac7221bda86b788fe049e750a90409a9c7e7              863 main/binary-amd64/Packages.gz
 SHA256:
- 2e0ae0b7d7a7cdda67667ea66c659d1ab44be5bc3a62e9d224c1ac49b529dc74              249 Release
- 2c1e595681be5ed7d4371b63c7d19e7e48e23dccec1d3fe5bcd2bebdb1b0d5d7             1650 main/binary-amd64/Packages
- f0bc56113f833b94e8b60699c1b58bf7f9b7dbb8c1d6fbc24f7b97d3f000a876              861 main/binary-amd64/Packages.gz
+ 4b5b31f664eb4676cba4cf27e251fbfe17b96eb713164d214442312dfc421ddf              249 Release
+ 8451bb669d2f89682c6eaf0c834245680c94b57e7c3715b0f66f4ab38e637d21             1650 main/binary-amd64/Packages
+ ea2bf9542ca76aa150619fff188690f9e8344caa93beea772dfe6c782301b339              863 main/binary-amd64/Packages.gz
 SHA512:
- 82e2469ed702413485eecbca81b92be3ac535007bb546c62848567ccc0e0e5d50ddce64c0f6126b88ca47266c87642f8728152f4a405f75a1782a026500d7e38              249 Release
- 1510f7b926a9154e113c87099da9221dd49fedbd8cd77f69033bc49a051f2ce2016710276750b15f3094f3defe9b96d76f3d6f29efae22d9f507afe14634d76d             1650 main/binary-amd64/Packages
- 3c57a0900cf1d9e3dae200377767f47b783a3c41102c5bb11e260ae81e68f18da8ea6ea7ad75e240c77b394b524d5742d6931622cf1c8c037a2961ba3440ca4c              861 main/binary-amd64/Packages.gz
+ 577d029f755b7abb7967ebdc1e9e4a0888ca9c63b228220d3795693540a576804299931b082d84d317c625c55be36315d5da9bcc52d26920edb34c6da935c1c8              249 Release
+ 3590897dd8d5180e6cfe019132277eeca9ff30bd564e30c4ab67b2acf3f15d653717dc4c994d7d177ddb0f7b6d10171d8ddf47b7df84cbfb2c52b17ce183e451             1650 main/binary-amd64/Packages
+ a708bc675051cc6197616f2b1b43b002aec04b3730d7a37469348e470e9de7b5f7ed1ceea7cf8568d3f6f8d4988900d713ae3322d62f50173cc182d7f103bab9              863 main/binary-amd64/Packages.gz
